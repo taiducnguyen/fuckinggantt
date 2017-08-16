@@ -1,1 +1,18 @@
-<div id="gantt_container" style="height:550px;"></div>
+<div id="pagecontent" style="height: 600px;">
+    <div id="Div1" style="border: 1px solid #8F8D8D; width: 10%; background: #F7F7F7; height: 100%; float: left; padding-right: 10px; overflow: auto;" align="center">
+        <button id="selectRows">Select Rows</button>
+        <button style="min-height: 5%;" id="addRow">Add</button><br />
+        <button style="min-height: 5%;" id="InsertNewItemAsSiblingBelow">Insert NewItem As Sibling Below</button><br />
+        <button style="min-height: 5%;" id="InsertNewItemAsChildOf">Insert NewItem As ChildOf</button><br />
+        <button style="min-height: 5%;" id="remove">Delete</button><br />
+        <button style="min-height: 5%;" id="indent">Indent</button><br />
+        <button style="min-height: 5%;" id="outdent">Outdent</button><br />
+        <button style="min-height: 5%;" id="moveup">Move Up</button><br />
+        <button style="min-height: 5%;" id="movedown">Move Down</button><br />
+        <button style="min-height: 5%;" id="exportToJSON">Export To JSON(Current Gantt data)</button><br />
+        <button style="min-height: 5%;" id="save">Save</button><br />
+    </div>
+    <!-- Div that will be transformed into the gantt widget above.-->
+    <div id="gantt_container" style="height: 100%; width: 100%;">
+    </div>
+</div>
