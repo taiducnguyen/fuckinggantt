@@ -1,0 +1,119 @@
+[{
+    "Name" : "Task 1",
+    "ID" : 1,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "8:00:00",
+    "Description" : "Description of Task 1"
+},
+{
+    "Name" : "Task 2",
+    "ID" : 2,
+    "PredecessorIndices" : "1",
+    "StartTime" : "2012-02-03T00:00:00Z",
+    "Effort" : "16:00:00",
+    "Description" : "Description of Task 2"
+},
+{
+    "Name" : "Task 3",
+    "ID" : 3,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "1.12:30:00",
+    "ProgressPercent" : 90,
+    "Description" : "Description of Task 3"     
+},
+{
+    "Name" : "Child Task 1",
+    "ID" : 4,
+    "IndentLevel" : 1,
+    "StartTime" : "2012-02-03T00:00:00Z",
+    "Effort" : "8:00:00",
+    "ProgressPercent" : 75,
+    "Description" : "Description of Task 3/Child Task 1"
+},
+{
+    "Name" : "Child Task 2",
+    "ID" : 5,
+    "IndentLevel" : 1,
+    "PredecessorIndices" : "4+8",
+    "Description" : "Description of Task 3/Child Task 2"
+},
+{
+    "Name" : "Grand Child Task 1",
+    "ID" : 6,
+    "IndentLevel" : 2,
+    "StartTime" : "2012-02-03T00:00:00Z",
+    "Effort" : "8:00:00",
+    "Description" : "Description of Task 3/Child Task 1/Grand Child 1"
+},
+{
+    "Name" : "Grand Child Task 2",
+    "ID" : 7,
+    "IndentLevel" : 2,
+    "StartTime" : "2012-02-03T00:00:00Z",
+    "Effort" : "16:00:00",
+    "Description" : "Description of Task 3/Child Task 1/Grand Child 2"
+},
+{
+    "Name" : "Child Task 3",
+    "ID" : 8,
+    "IndentLevel" : 1,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "16:00:00",
+    "Description" : "Description of Task 3/Child Task 3"
+},
+{
+    "Name" : "Task 4",
+    "ID" : 9,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "00:00:00",
+    "ProgressPercent" : 60,
+    "Description" : "Description of Task 4"
+},
+{
+    "Name" : "Task 5",
+    "ID" : 10,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "8:00:00",
+    "PredecessorIndices" : "3+8",
+    "Description" : "Description of Task 5"  
+},
+{
+    "Name" : "Child Task 1",
+    "ID" : 11,
+    "IndentLevel" : 1,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "16:00:00",
+    "Description" : "Description of Task 5/Child Task 1"
+},
+{
+    "Name" : "Child Task 2",
+    "ID" : 12,
+    "PredecessorIndices" : "11SS",
+    "IndentLevel" : 1,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "8:00:00",
+    "Description" : "Description of Task 5/Child Task 2"
+},
+{
+    "Name" : "Task 6",
+    "ID" : 13,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "1.16:00:00",
+    "Description" : "Description of Task 6" 
+},
+{
+    "Name" : "Child Task 1",
+    "ID" : 14,
+    "IndentLevel" : 1,
+    "StartTime" : "2012-02-02T00:00:00Z",
+    "Effort" : "1.20:00:00",
+    "Description" : "Description of Task 6/Child Task 1"  
+},
+{
+    "Name" : "Grand Child Task 1",
+    "ID" : 15,
+    "StartTime" : "2012-02-04T00:00:00Z",
+    "Effort" : "1.00:00:00",
+    "IndentLevel" : 2,
+    "Description" : "Description of Task 6/Child Task 2"
+}]

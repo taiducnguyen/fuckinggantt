@@ -1,0 +1,2705 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RadiantQ.Web.JQGantt</name>
+    </assembly>
+    <members>
+        <member name="T:RadiantQ.Web.JQGantt.Common.JQGanttInitializer">
+            <summary>
+            Contains helper methods providing common functionalities
+            to ASP.NET and ASP.NET MVC components.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.FlexyGanttOptionsConverter">
+            <summary>
+            JSON Serialization and Deserialization Assistant Class
+            </summary>   
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.FlexyGanttOptionsConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Converts the provided dictionary into an object of the specified type. 
+            </summary>
+            <param name="dictionary">An dictionary of property data stored as name/value pairs. </param>
+            <param name="type">The type of the resulting object.</param>
+            <param name="serializer">The JavaScriptSerializer instance. </param>
+            <returns>The desterilized object. </returns>
+            <exception cref="T:System.InvalidOperationException">We only serialize</exception>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.FlexyGanttOptionsConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Builds a dictionary of name/value pairs
+            </summary>
+            <param name="obj">The object to serialize. </param>
+            <param name="serializer">The object that is responsible for the serialization. </param>
+            <returns>An object that contains key/value pairs that represent the object’s data. </returns>
+            <exception cref="T:System.InvalidOperationException"><paramref name="obj"/> must be of the <see cref="T:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions"/> type</exception>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptionsConverter.SupportedTypes">
+            <summary>
+            Gets a collection of the supported types
+            </summary>       
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.ProjectGanttOptionsConverter">
+            <summary>
+            JSON Serialization and Deserialization Assistant Class
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.ProjectGanttOptionsConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Converts the provided dictionary into an object of the specified type. 
+            </summary>
+            <param name="dictionary">An <see cref="T:System.Collections.Generic.IDictionary`2"/> instance of property data stored as name/value pairs. </param>
+            <param name="type">The type of the resulting object.</param>
+            <param name="serializer">The JavaScriptSerializer instance. </param>
+            <returns>The deserialized object. </returns>
+            <exception cref="T:System.InvalidOperationException">We only serialize</exception>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.ProjectGanttOptionsConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Builds a dictionary of name/value pairs
+            </summary>
+            <param name="obj">The object to serialize. </param>
+            <param name="serializer">The object that is responsible for the serialization. </param>
+            <returns>An object that contains key/value pairs that represent the object’s data. </returns>
+            <exception cref="T:System.InvalidOperationException"><paramref name="obj"/> must be of the <see cref="T:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions"/> type</exception>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptionsConverter.SupportedTypes">
+            <summary>
+            Gets a collection of the supported types
+            </summary>     
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings">
+            <summary>
+            Some settings that are common to both FlexyGantt and ProjectGantt.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.ControlId">
+            <summary>
+            Represents the id of the div that will be made a gantt widget.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.TableId">
+            <summary>
+            Represents the id of the div that will be made a GanttTable widget.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.DataSourceUrl">
+            <summary>
+            An Uri identifying a resource that returns the task hierarchy in Json format.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.AfterDataRetrievedCallback">
+            <summary>
+            AfterDataRetrievedCallback will call when source is retrieved from server.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.AfterGanttWidgetInitializedCallback">
+            <summary>
+            AfterGanttWidgetInitializedCallback will call when the Gantt is initialized.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.DataSourceUrlArguments">
+            <summary>
+            Arguments to be sent to the server.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.LocalizationResourceFilePath">
+            <summary>
+            Culture File Path.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.CurrentCultureName">
+            <summary>
+            Culture Name.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.AjaxSettings">
+             <summary>
+            A collection of Ajax options.
+             </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.ProjectStartDate">
+             <summary>
+            A collection of Ajax options.
+             </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.GanttTableRowLoadedCallBack">
+             <summary>
+            GanttTableRowLoadedCallBack will call while loading the gantt row.
+             </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.DataConverterCallBack">
+            <summary>
+            Specifies the ajax data convertor callback.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.ResizeInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while resizing. If you set this property make
+            sure that the assigned Popup does not have a Parent yet. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.MovingInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while moving the task. If you set this property make sure that the assigned Popup does not have a Parent yet.
+            The DataContext for this popup will be an instance of the ShiftAndConnectionTracker type in a GanttControl and ShiftTracker in a FlexyGantt.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.ConnectingInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while connecting two task. If you set this property make
+            sure that the assigned Popup does not have a Parent yet. 
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.JQFlexyGanttSettings">
+            <summary>
+            Settings related to FlexyGantt.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.JQFlexyGanttSettings.#ctor">
+            <summary>
+            Constructor 
+            </summary> 
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQFlexyGanttSettings.Options">
+            <summary>
+            FlexyGantt widget options.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.JQProjectGanttSettings">
+            <summary>
+            Settings related to Project Gantt.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.JQProjectGanttSettings.#ctor">
+            <summary>
+            Constructor 
+            </summary> 
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQProjectGanttSettings.Options">
+            <summary>
+            Project Gantt widget Options
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.JQProjectGanttSettings.ProvideWBSID">
+            <summary>
+            A method through which you can provide a wbs id for a task based on it's position in the hierarchy. Setting this will turn 
+            on auto WBS ID generation for tasks.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.GanttBaseOptions">
+            <summary>
+            Gantt Base Options, common for both FlexyGantt and Project Gantt
+            </summary>      
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.#ctor">
+            <summary>
+            Constructor 
+            </summary>  
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.OnTaskBarLoad">
+            <summary>
+            OnTaskBarLoad callback function
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.AutoExpandNodes">
+            <summary>
+            Specifies if realized nodes are automatically expanded. Default is true.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.WorkTimeSchedule">
+            <summary>
+            Gets or sets the WorkTimeSchedule that defines the working time schedule for the
+            project.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.MinTimeUnitWidthForHeaderVisibility">
+            <summary>
+            If the time units in a header are shrunk to less than the specified size (while zooming out for example), the whole header will be hidden.
+            Default is 10px. Value cannot be less than 10.
+            </summary>
+            <remarks>Also, while zooming out, the user cannot shrink the time-units in the top-most header to a width
+            that is smaller than this value.</remarks>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.ZoomOptions">
+            <summary>
+            Allows you to customize the Zooming options available for your end-users during runtime. Default is 
+            MouseWheelZoomOnTimeScaleHeaders | MouseWheelZoomOnGanttChart | LeftMouseButtonDownDrag.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.ScrollOptions">
+            <summary>
+            Allows you to configure the end-user scrolling options.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.TablePanelWidth">
+            <summary>
+            To set the width of table area.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.RowHeight">
+            <summary>
+            Gets or sets the row height for each activity in the grid and chart.
+            </summary>
+            <value>
+            Default is 20.0.
+            </value>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.BaseTimeUnitWidth">
+            <summary>
+            Specifies the width that will be allocated to the base time unit in the gantt.
+            chart.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.BaseTimeUnitWidthMaximum">
+            <summary>
+            This specifies how much the end-user can zoom-out using the mouse wheel or the zoom-slider.
+            Default value is 100. Provide a lower value based on what and how many time scales you choose to display in 
+            the headers.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.BaseTimeUnitWidthMinimum">
+            <summary>
+            This specifies how much the end-user can zoom-in using the mouse wheel or the zoom-slider.
+            Default value is 10. Provide a higher or lower value based on what and how many time scales you choose to display in 
+            the headers.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.CustomChartBackgroundRanges">
+            <summary>
+             Points to a JavaScript instance that is a set of custom ranges that will be rendered in the chart's background with each range's content defined in the CustomRangeInfo.DataTemplate.
+             </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.DependencyLineColor">
+            <summary>
+            Gets or sets the DependencyLineColor.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.SelectionMode">
+            <summary>
+            Selection Mode
+            </summary>
+            <value>
+            Default is Multiple.
+            </value>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.RoundTimeEditsTo">
+            <summary>
+            Gets or sets a property that specifies how end-user specifid time values should
+            be rounded to.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.SpecialLineInfos">
+            <summary>
+            Returns a list of <see cref="T:RadiantQ.Web.JQGantt.Common.SpecialLineInfo">SpecialLineInfo</see>
+            instances. The default list includes a special line for &quot;Today&quot;.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.TimeScaleHeaders">
+            <summary>
+            Gets or sets a list of <see
+            cref="T:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition">TimeScaleHeaderDefinition</see>
+            definitions.
+            </summary>
+            <remarks>
+            This list specifies the headers that are to be used in the chart view. The <see
+            cref="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.BaseTimeUnitWidth">BaseTimeScaleUnitWidth</see>
+            defines the horizontal space taken by each header. 
+            <para></para>
+            <para>Ensure that the different time scale headers are added in appropriate
+            order. For example, &quot;days&quot; should be added after &quot;weeks&quot; and
+            not the other way.</para>
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.Zoomed">
+            <summary>
+            References a java script function that's called when the chart is zoomed.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.BeforeZooming">
+            <summary>
+            References a java script function that's called before setting the updated BaseTimeUnitWidth in Chart.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.TaskTooltipTemplateID">
+            <summary>
+            The id of the Task Tooltip Template
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.TimeRangeHighlightBehavior">
+            <summary>
+            Specifies the any time range highlight behavior that should be turned on. Default is None.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.KnockoutObjectName">
+            <summary>
+            String variable name which represent the Knockout view model
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.GanttChartOptions">
+            <summary>
+            Specifies the GanttChart Options.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.ChartTemplateApplied">
+            <summary>
+            References a java script function that's called when Chart is created.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.GanttTableTemplateApplied">
+            <summary>
+            References a java script function that's called when Table is created.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.IsReadOnly">
+            <summary>
+            Gets or sets a value that specifies whether the control is editable by the end-user. Default is false.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.IsEffortReadOnly">
+            <summary>
+            Gets or sets a value that specifies whether the required efforts are editable by the end-user. Default is false.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.IsStartTimesReadOnly">
+            <summary>
+            Gets or sets a value that specifies whether the start times are editable by the end-user. Default is false.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.IsProgressPercentReadOnly">
+            <summary>
+            Gets or sets a value that specifies whether the progress percents are editable by the end-user. Default is false.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.IsDependencyLinesReadOnly">
+            <summary>
+             Gets or sets a value that specifies whether the DependencyLines are editable by the end-user. Default is false.
+            </summary>        
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.EnableAlternativeRowBackground">
+            <summary>
+             Gets or sets a value that will enable the AlternativeRowBackground.
+            </summary>       
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.UseChartVirtualization">
+            <summary>
+            Specifies whether or not to use virtualization while rendering the chart. If Virtualization is on, only the visible rows are rendered in the chart allowing you to load
+            a very large number of rows. However, scrolling could be slower than when virtualization is false. Default is false for backward compatibility. Turn this to true, if the gantt takes longer than 2 seconds to load your data, to improve load time.
+            Set this before the gantt loads. For performance reasons, resetting after the load is not supported.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.TaskBarBrowseToCueLeftTemplate">
+            <summary>
+            The template that will be used to render the left arrow button in the browse-to task cue displayed to the left of a row, when the task is outside and to the left of the view.
+            This cue will automatically display when a template is provided.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.TaskBarBrowseToCueRightTemplate">
+            <summary>
+            The template that will be used to render the right arrow button in the browse-to task cue displayed to the right of a row, when the task is outside and to the right of the view. 
+            This cue will automatically display when a template is provided.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.CustomProgressCalculation">
+            <summary>
+            A custom logic that will be used, if available, to calculate the progress value of a summary bar. Set this before setting the ItemsSource property.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.UseVirtualization">
+            <summary>
+            Gets or sets the UseVirtualization.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.ResizeInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while resizing. If you set this property make
+            sure that the assigned Popup does not have a Parent yet. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.MovingInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while moving the task. If you set this property make sure that the assigned Popup does not have a Parent yet.
+            The DataContext for this popup will be an instance of the ShiftAndConnectionTracker type in a GanttControl and ShiftTracker in a FlexyGantt.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.ConnectingInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while connecting two task. If you set this property make
+            sure that the assigned Popup does not have a Parent yet. 
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions">
+            <summary>
+            Options for the FlexyGantt widget.
+            </summary> 
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.#ctor">
+            <summary>
+            Constructor 
+            </summary> 
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TaskStartTimeProperty">
+            <summary>
+            Specifies the property that returns a start time (DateTime) from the bound object representing a task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.FlatItemsSourceCreated">
+            <summary>
+            A java script fuction that's called when the flat list representing each row in the table is created.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.ParentTaskStartTimeProperty">
+            <summary>
+            Specifies the binding that returns a end time (DateTime) from the bound object representing a summary task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TaskItemTemplate">
+            <summary>
+            Specifies the look and feel of a task rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's start and end time.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.ParentTaskItemTemplate">
+            <summary>
+            Specifies the look and feel of a summary-task rendered in the gantt chart. The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's start and end time. This template should
+            be capable of rendering the different bound object types representing each summary row at different levels in the tree.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TaskEndTimeProperty">
+            <summary>
+            Specifies the binding that returns a end time (DateTime) from the bound object representing a task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.ParentTaskEndTimeProperty">
+            <summary>
+            Specifies the binding that returns a end time (DateTime) from the bound object representing a summary task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.OverlappedTasksRenderingOptimization">
+            <summary>
+            Specifies if the Task Bars can overlap or shrink to adjust the heights within the gantt chart rows.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TasksListProperty">
+            <summary>
+            If the leaf nodes in the tree contain a list of tasks that are meant to be displayed in the same row in the
+            gantt chart, define this binding to return the list of tasks from the bound object (which will be the 
+            DataContext for this binding) representing the leaf-node.
+            If your leaf node is itself a task, this should be null.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.ParentTasksListProperty">
+            <summary>
+            If the parent nodes in the tree contain a list of tasks that are meant to be displayed in the same row in the
+            gantt chart, define this binding to return the list of tasks from the bound object (which will be the 
+            DataContext for this binding) representing the parent-node.
+            If your parent node itself represents a single task with properties representing the start and end times, then
+            leave this at null and set the ParentTaskStartTimeBinding and ParentTaskEndTimeBinding properties.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.RowHeightBinding">
+            <summary>
+            Use this to specify a varyting row height for each row in the FlexyGantt's FlexyTable. The source for this binding will be a FlexyNodeData instance which has a Data property which is a reference
+            to the bound object corresponding to that row.
+            </summary>      
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.ProgressPercentBinding">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.HierarchyResolverFunction">
+            <summary>
+            If there is a hierarchy that needs to be displayed in the grid on the left, then provide a "resolver function" here that will help retrieve a child list from a parent item.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.DynamicResolverFunction">
+            <summary>
+            DynamicResolverFunction is same as hierarchy resolver function but it will call when the the flexyNodeData's ExpandState changed dynamically, and the value returned by resolverFunction will be ignored.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.UseTimeRangeFilteredTasksInRows">
+            <summary>
+              Normally all the tasks within a row are rendered in the UI even if they are out the current view. But, this would bog things down if there are thounds of tasks to show in the view. Set this to true if you want them
+             to be filtered every time the chart's view span changes. Use this in conjunction with UseTimeRangeFilteredTasksInRows, TimeRangeFilteredTasksTimeBuffer and FilterTasksByTimeRange event.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TimeRangeFilteredTasksTimeBuffer">
+            <summary> 
+            The buffer to apply before and after the chart's view span when filtering tasks to show within that span, when UseTimeRangeFilteredTasksInRows is set to true
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.FilterTasksByTimeRange">
+            <summary>
+            Listener used to determine which set of tasks fall under the current chart view span.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions">
+            <summary>
+            Options for the project gantt widget.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.#ctor">
+            <summary>
+            Constructor 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ProjectStartDate">
+            <summary>
+            Specifies the project start date. This date will be used when StartTime is not available for a task. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ProjectEndDate">
+            <summary>
+            Specifies the project start date. This date will be used when StartTime is not available for a task. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.FlatActivitiesListCreated">
+            <summary>
+            The java script function that's called when the flat list of activities are created.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ValidateDependencySetting">
+            <summary>
+            Gets or sets a value that indicates whether newly added dependencies should be validated for appropriateness.
+            For example, a task cannot have a dependency on it's parent/summary task. Default is true. Set this to false 
+            while binding a data source with the gantt when the dependencies in the bound data source are known to be valid.
+            This will greatly improve load time. See Reference for code example.
+            </summary>
+            <remarks>
+            <code lang="Java Script">Sample code:
+            <para>// Turn off dependency validation and start time constraining,</para>
+            while loading.
+            <para></para>Html.JQProjectGantt(new JQProjectGanttSettings(){ ..,ValidateDependencySetting =false});
+            <para></para>Html.JQProjectGantt(new JQProjectGanttSettings(){ ..,EnforceDependencyConstraints =false});
+            <para></para>// Turn them back on to validate and enforce times during end-user
+            interaction. You can listen to the RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.AfterGanttWidgetInitializedCallback in your jquery code and turn this back on like this.
+            <para></para> $(element).GanttControl({ EnforceDependencyConstraints: true, ValidateDependencySetting: true });    
+            </code>
+            </remarks>
+            <seealso
+            cref="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.EnforceDependencyConstraints">EnforceDependencyConstraints</seealso>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.EnforceDependencyConstraints">
+            <summary>
+            Gets or sets a value that indicates whether newly added dependencies should be validated for appropriateness.
+            For example, a task cannot have a dependency on it's parent/summary task. Default is true. Set this to false 
+            while binding a data source with the gantt when the dependencies in the bound data source are known to be valid.
+            This will greatly improve load time. See Reference for code example.
+            </summary>
+            <remarks>
+            <code lang="Java Script">Sample code:
+             <para>// Turn off dependency validation and start time constraining,</para>
+            while loading.
+            <para></para>Html.JQProjectGantt(new JQProjectGanttSettings(){ ..,ValidateDependencySetting =false});
+            <para></para>Html.JQProjectGantt(new JQProjectGanttSettings(){ ..,EnforceDependencyConstraints =false});
+            <para></para>// Turn them back on to validate and enforce times during end-user
+            interaction. You can listen to the RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.AfterGanttWidgetInitializedCallback in your jquery code and turn this back on like this.
+            <para></para> $(element).GanttControl({ EnforceDependencyConstraints: true, ValidateDependencySetting: true });    
+            </code>
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.AutoCalculateSummaryTaskTimes">
+            <summary>
+            Specifies whether the parent/summary task times will be calculated automatically based on the
+            child tasks.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.AdjustDurationOnAssignment">
+            <summary>
+            Reduces or increases the duration of the task when resources are assigned to or excluded from it. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.IDBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to int) from
+            the source task item, indicating the id for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.SortOrderBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to
+            int) from the source task item, indicating the sort order for the activity.
+            Setting this is optional for data bound instances of the gantt control.
+            </summary>
+            <remarks>
+            When an activity is repositioned by the end user (or programatically) the order
+            of the activity in the bound data source needs to be updated. This is possible
+            only by including a field that indicates it's sort order.
+            <para></para>
+            <para>If this is not set, any reordering information will not be persisted</para>
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.NameBinding">
+            <summary>
+            Gets or sets the binding information that will return a string value from
+            the source task item, indicating the name for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.IndentLevelBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to int) from
+            the source task item, indicating the indent level for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.StartTimeBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to DateTime) from
+            the source task item, indicating the start time for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.PreferredStartTimeBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to DateTime) from
+            the source task item, indicating the preferred start time for the activity. Setting this is
+            optional for data bound instances of the gantt control.
+            </summary>
+            <remarks>
+            The StartTime of an activity refers to the current start time which could have been computed based on the
+            dependencies and parent-child hierarchies that are in the gantt. But, this property refers to the preferred
+            start time for this activity. So, the gantt will try to anchor the activity to this time whenever possible.
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.EffortBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to TimeSpan) from
+            the source task item, indicating the required effort for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.PredecessorIndicesBinding">
+            <summary>
+            Gets or sets the binding information that will return a string value from
+            the source task item, indicating the predecessors for the activity. Setting this is
+            optional for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ProgressPercentBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to double) from
+            the source task item, indicating the progress info for the activity. Setting this is
+            optional for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.DescriptionBinding">
+            <summary>
+            Gets or sets the binding information that will return a string value from
+            the source task item, indicating the description for the activity (this value is currently not used
+            in the implementation). Setting this is
+            optional for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ResourceItemsSource">
+            <summary>
+            The data source list containing a list of objects representing the resources
+            that can be assigned to each activity. Set this before setting the DataSource property. It's typical to set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.AssignedResourcesBinding">AssignedResourcesBinding</see> property as well, when you set this. The <see
+            cref="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ResourceNameBinding">ResourceNameBinding</see>
+            property defines how the name of each resource can be retrieved from this data source (if this is a list of objects, instead of a list of strings).
+            </summary>
+            <remarks>
+            Note that you can also add a list of strings for this property, in which case
+            the ResourceNameBinding property need not be set.
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ResourceNameBinding">
+            <summary>
+            Gets or sets the binding information that will return a string from the
+            source resource item (specified in the ResourceItemsSource list) indicating the name for the resource. 
+            Setting this is optional. If you do not set this, the bound resource item's (if any) "toString" will be used as the resource name in the gantt.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ResourceIDBinding">
+            <summary>
+            Gets or sets the binding information that will return a string from the
+            source resource item (specified in the ResourceItemsSource list) indicating the ID for the resource. 
+            This will be used to resolve the comma-separated resource assignments string in a task.
+            Setting this is optional. If you do not set this, the ResourceNameBinding will be used to resolve the assignments string instead.
+            If you do set this in XAML or before
+            initializing the ResourceItemsSource with a source collection.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ResourceScheduleBinding">
+            <summary>
+            Gets or sets the binding information that will return a WorkTimeSchedule
+            instance from the source resource item (specified in the ResourceItemsSource
+            list) that defines the resource's schedule. Setting this is optional. If not
+            set, the resource will inherit the same schedule as the overall project.
+            Typically, you could bind this to a string property in your resource type and
+            convert it into a WorkTimeSchedule as illustrated in the summary.
+            </summary>
+            <remarks>
+            The custom schedule can be represented as a string like this: 
+            <para></para>
+            <code lang="C#">new ResourceInfo() { ResourceID = 2, ResourceName =
+            &quot;Resource 2&quot;, CustomScheduleString = &quot;MON 8:00:00 16:00:00; TUE
+            8:00:00 16:00:00; WED 8:00:00 16:00:00; THU 8:00:00 16:00:00;&quot; } 
+            </code>
+            <para>In which case this property would be set as: </para>
+            <para></para>
+            <code>ResourceNameBinding=&quot;{Binding ResourceName}&quot; ResourceScheduleBinding=&quot;{Binding CustomScheduleString, Converter={StaticResource stringToWorkTimeScheduleConverter}}&quot; 
+            </code> 
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.AssignedResourcesBinding">
+            <summary>
+            Gets or sets the binding information that will return a string of resource names from the
+            source task item, indicating the resources assigned to the corresponding
+            activity. Setting this is optional.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.IsTaskReadOnlyBinding">
+            <summary>
+            Gets or sets the binding information that will return a bool value indicating
+            whether a task's times are editable in the table and chart.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.CanShiftInProgressTasks">
+            <summary>
+            Specifies whether dependency constraints can shift a dependent task once it's work has progressed or completed. Default is true.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ScheduleFrom">
+            <summary>
+            Specifies the project start date. This date will be used when StartTime is not available for a task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.TaskItemTemplate">
+            <summary>
+            Specifies the look and feel of a task rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's start and end time.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ProgressBarTemplate">
+            <summary>
+            Specifies the look and feel of a Progress Bar The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's Progress.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ParentTaskItemTemplate">
+            <summary>
+            Specifies the look and feel of a  Parent task rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's start and end time.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.CanInsertPropertyChangeTriggeringPropertiesInData">
+            <summary>
+            Specifies whether can insert PropertyChange listener properties in data.
+            </summary>
+            <value>
+            Default is false.
+            </value>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.TaskBarBackgroundTemplate">
+            <summary>
+            Specifies the look and feel of a baseline bar rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the baseline's start and end time.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.TaskBarAdornerTemplate">
+            <summary>
+            Specifies the look and feel of a baseline bar rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the baseline's start and end time.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.FilterActivites">
+            <summary>
+            The method that will specify whether or not an activity should be filtered out of view. Return true to keep the activity visible; false to hide it.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.LagStringUnitsInHours">
+            <summary>
+            Gets or sets a value that defines how many hours one unit of the lag string in predecessors string represents. Set this before setting the ItemsSource property. Default is 1. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.WBSIDBinding">
+            <summary>
+            Set the binding information that will return a value (convertible to
+            string) from the source task item, indicating the WBS for the activity and into which the auto-generated WBS will be persisted.
+            Setting this is optional.  If you
+            do, set this in XAML or before initializing the ItemsSource with a source collection.
+            The GanttControl.ProvideWBSID handler will have to be set for the auto WBS generation to kick in.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.RoundToOptions">
+            <summary>
+            Specifies how user editing times should be rounded to. 
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.RoundToOptions.None">
+            <summary>
+            Specifies not to round up.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.RoundToOptions.Auto">
+            <summary>
+            Currently uses fifteen minute rounding.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.RoundToOptions.Minute">
+            <summary>
+            Rounds up to the next minute.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.RoundToOptions.FifteenMinutes">
+            <summary>
+            Rounds up to the next fifteen minutes.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.RoundToOptions.ThirtyMinutes">
+            <summary>
+            Rounds up to the next thirty minutes.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.RoundToOptions.Hour">
+            <summary>
+            Rounds up to the next hour.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.RoundToOptions.HalfDay">
+            <summary>
+            Rounds up to the 12AM and 12PM
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.RoundToOptions.Day">
+            <summary>
+            Rounds up to the next day.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.TimeScaleType">
+            <summary>
+            Specifies the type of time scale to use in the TimeScaleHeaderDefinition.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeScaleType.Minutes">
+            <summary>
+            Divide time scale by minutes.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeScaleType.Hours">
+            <summary>
+            Divide time scale by hours.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeScaleType.Days">
+            <summary>
+            Divide time scale by days
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeScaleType.Weeks">
+            <summary>
+            Divide time scale by weeks
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeScaleType.Months">
+            <summary>
+            Dividetime scale  by months
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeScaleType.Years">
+            <summary>
+            Divide time scale by years
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeScaleType.Custom">
+            <summary>
+            Divide time scale by custom intervals specified via the <see
+            cref="E:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.ProvideCustomTimeIntervals">TimeScaleHeaderDefinition.ProvideCustomTimeIntervals</see>
+            event.
+            </summary>
+            <remarks>
+            When setting this, also make sure to set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.CustomTimeScaleTypeHint">TimeScaleHeaderDefinition.CustomTimeScaleTypeHint
+            </see>property and listen to the <see
+            cref="E:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.ProvideCustomHeaderText">TimeScaleHeaderDefinition.ProvideCustomHeaderText</see>
+            event.
+            </remarks>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.Binding">
+            <summary>
+            A conventient type that lets you specify simple binding information.
+            </summary>      
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.Binding.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Binding Constructor
+            </summary>
+            <param name="propertyName"></param>
+            <param name="converterFunction"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.Binding.#ctor(System.String,System.String,RadiantQ.Web.JQGantt.Common.BindingMode)">
+            <summary>
+            Binding Constructor
+            </summary>
+            <param name="propertyName"></param>
+            <param name="converterFunction"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.Binding.#ctor(System.String,System.String)">
+            <summary>
+            Binding Constructor
+            </summary>
+            <param name="propertyName"></param>
+            <param name="converterFunction"></param>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.Binding.#ctor(System.String)">
+            <summary>
+            Binding Constructor
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.Binding.#ctor">
+            <summary>
+            Binding Constructor
+            </summary>
+            <param ></param>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Binding.Property">
+            <summary>
+            Property Name.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Binding.Mode">
+            <summary>
+            Mode
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Binding.Converter">
+            <summary>
+            Converter Function.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.SelectionMode">
+            <summary>
+            Gets or sets the <see
+            cref="T:SelectionMode">DataGridSelectionMode</see>.
+            </summary> 
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.SelectionMode.Multiple">
+            <summary>
+            To select multiple rows.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.SelectionMode.Single">
+            <summary>
+            To select Single rows.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.ScheduleFrom">
+            <summary>
+            Enumerates the different default scheduling options.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ScheduleFrom.ProjectStartDate">
+            <summary>
+            When assigning a default start time for a task, align it the project start date.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ScheduleFrom.ProjectEndDate">
+            <summary>
+            When assigning a default start time for a task, align it to project end date.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.SpecialLineInfo">
+            <summary>
+            Specifies where and how lines indicating special times/days should be rendered.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.SpecialLineInfo.ToolTipText">
+            <summary>
+            The tooltip for the line.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.SpecialLineInfo.LineColor">
+            <summary>
+            The brush for the line.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.SpecialLineInfo.LineDateTime">
+            <summary>
+            The DateTime at which to draw the line in the chart.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.ChartZoomOptions">
+            <summary>
+            The different zooming options available for the end-users in the GanttControl. This enumeration can be
+            treated as a bit field; that is, as a set of flags.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ChartZoomOptions.None">
+            <summary>
+            Turns off all zooming capabilities.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ChartZoomOptions.ShowZoomSliderInHeader">
+            <summary>
+            Shows the zoom slider in the header when the mouse moves over the header.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ChartZoomOptions.MouseWheelZoomOnTimeScaleHeaders">
+            <summary>
+            Zooms when using the mouse wheen on the time scale header.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ChartZoomOptions.MouseWheelZoomOnGanttChart">
+            <summary>
+            Zooms when mouse wheel is used on the gantt chart.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ChartZoomOptions.LeftMouseButtonDownDrag">
+            <summary>
+            Zooms when left mouse down on the time span header and dragged.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.OverlappedTasksRenderingOptimization">
+            <summary>
+            Lists the options that specify how te FlexyGantt should handle overlapping tasks rendering.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.OverlappedTasksRenderingOptimization.None">
+            <summary>
+            No optimization is done, overlapping bars end up one over the other.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.OverlappedTasksRenderingOptimization.ShrinkHeight">
+            <summary>
+            FlexyGantt will shrink the height of the overlapping bars so that they are all visible.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.ChartScrollOptions">
+            <summary>
+            The different scrolling options available for scrolling the time scale header. This enumeration can be
+            treated as a bit field; that is, as a set of flags.
+            </summary>  
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ChartScrollOptions.None">
+            <summary>
+            Turns off all scrolling capabilities.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ChartScrollOptions.LeftMouseButtonDownDrag">
+            <summary>
+            Left mouse down on the time scale header and drag to scroll it.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.ChartScrollOptions.CtrlAndLeftMouseButtonDownDrag">
+            <summary>
+            Ctrl + Left mouse down on the time scale header and drag to scroll it.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.CustomTimeScaleTypeHint">
+            <summary>
+            Provide this hint to allow the gantt to intelligently determine a header's
+            visibility when it's Type is set to TimeScaleType.Custom. The hint need not be
+            accurate. If you are providing a custom monthly header, specify it's <see
+            cref="P:RadiantQ.Web.JQGantt.Common.CustomTimeScaleTypeHint.EquivalentType">EquivalentType</see>
+            as TimeScaleType.Months and <see
+            cref="P:RadiantQ.Web.JQGantt.Common.CustomTimeScaleTypeHint.EquivalentUnits">EquivalentUnits</see> to 31.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.CustomTimeScaleTypeHint.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.CustomTimeScaleTypeHint.#ctor(System.Int32,RadiantQ.Web.JQGantt.Common.TimeScaleType)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.CustomTimeScaleTypeHint.EquivalentType">
+            <summary>
+            The type it's equivalent to. Value, obviously, cannot be TimeScaleType.Custom.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.CustomTimeScaleTypeHint.EquivalentUnits">
+            <summary>
+            The number of equivant units of <see
+            cref="P:RadiantQ.Web.JQGantt.Common.CustomTimeScaleTypeHint.EquivalentType">EquivalentType</see>.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.CustomRangesInfos">
+            <summary>
+            Type where a set of custom background ranges can be defined to be rendered in the gantt chart's background.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.CustomRangesInfos.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.CustomRangesInfos.ProvideRepeatingCustomRanges">
+            <summary>
+            Function name of the function which provide a set of ranges for a given chart view start and chart view end. Ideal for providing repeating ranges.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.CustomRangesInfos.DiscreetCustomRanges">
+            <summary>
+            A list of custom background ranges. For repeating ranges, listen to ProvideRepeatingCustomRanges event and provide the ranges there for the given view.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.CustomRangeInfo">
+            <summary>
+            Defines a custom background range to be rendered in the gantt chart.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.CustomRangeInfo.#ctor(System.DateTime,System.DateTime,System.Object)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.CustomRangeInfo.StartTime">
+            <summary>
+            The start time for the range.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.CustomRangeInfo.EndTime">
+            <summary>
+            The end time for the range.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.CustomRangeInfo.DataTemplate">
+            <summary>
+            The template where you can define the look and feel of the background range.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.CustomRangeInfo.Tag">
+            <summary>
+            A place holder for some custom information.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition">
+            <summary>
+            Defines a time-scale header for the gantt chart view.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.#ctor">
+            <summary>
+            Constructor 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.BaseTimeScaleType">
+            <summary>
+            Returns the time-scale type of the bottom most header.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.HeaderHeight">
+            <summary>
+            The height for this header. Default is double.Nan in which case the height will be calculated automatically.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.Name">
+            <summary>
+            A friendly name that is used in some places the gantt's UI. For non-custom types, the value for this is automatically generated based on the Type.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.CustomTimeScaleTypeHint">
+            <summary>
+            An instance that provides a hint for the gantt to determine whether to keep the headers visible.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.TextFormat">
+            <summary>
+            Specifies the format of the header text. Refer to the JavaScript <see cref="!:https://code.google.com/p/datejs/wiki/FormatSpecifiers">Date.toString()</see>
+            class reference for more info on available format strings. You can optionally
+            specify multiple formats separated by a "|" to let the gantt decide
+            the best fit based on the available width for the time unit in the time span
+            header. The gantt will try rendering the first format and if it doesn't fit, try
+            the next format and so on. Alternatively, leave this at <b>Empty String</b> to
+            automatically use the appropriate text based on the current culture.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.Type">
+            <summary>
+            Gets or sets the <see
+            cref="T:RadiantQ.Web.JQGantt.Common.TimeScaleType">TimeScaleType</see>
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.ProvideCustomHeaderText">
+            <summary>
+            unction name of the function which provide the custom text for the header when this instance's
+            <see
+            cref="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.Type">Type</see>
+            is set to TimeScaleType.Custom.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.ProvideCustomTimeIntervals">
+            <summary>
+            Function name of the function which provide the custom time intervals when this instance's
+            <see
+            cref="P:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition.Type">Type</see>
+            is set to TimeScaleType.Custom.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinitions">
+            <summary>
+            A collection of TimeScaleHeaderDefinition instances.
+            </summary>
+            
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinitions.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.TimeRangeHighlightBehavior">
+            <summary>
+            The different time unit highlight behaviors supported in the gantt.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeRangeHighlightBehavior.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeRangeHighlightBehavior.HighlightInChartOnHeaderMouseHover">
+            <summary>
+            Highlights the corresponding region in the chart when the mouse hovers over a time span header.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.GanttChartOptions">
+            <summary>
+            GanttChart Options
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttChartOptions.AnchorTime">
+            <summary>
+            Specifies the time to which the view should be anchored when it loads up for the first time. Default is DateTime.Today. If ResizeToFit is set to true, then this is the left most visible
+            time in the view. If ResizeToFit is false, then this is the time at the middle of the view.
+            </summary>      
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttChartOptions.EnablePagerButtonRight">
+            <summary>
+            To enable the Page ButtonRight
+            </summary>
+            /// <value>
+            Default is true.
+            </value>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttChartOptions.EnablePagerButtonLeft">
+            <summary>
+            To enable the Left ButtonRight
+            </summary>
+            <value>
+            Default is true.
+            </value>        
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttChartOptions.ResizeToFit">
+            <summary>
+            Resizes to fit the available space. The ViewWidth property is then ignored.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttChartOptions.ViewWidth">
+            <summary>
+            Specifies the width for the scrollable view in pixels. Default is 2000. Allowed range is 300 to 10000. Note that smaller widths would look ugly if the visual width of the GanttChart ends up being larger than the ViewWidth specified here.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttChartOptions.TimeIndicatorLineOption">
+            <summary>
+            Specifies the different types of TimeIndicatorLinesOptions in task bar.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttChartOptions.TaskBarHeight">
+            <summary>
+            Specifies the height of the task bar.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.TimeIndicatorLines">
+            <summary>
+            Specifies the different types of TimeIndicatorLines in task bar.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeIndicatorLines.None">
+            <summary>
+            To hide the TimeIndicatorLines .
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeIndicatorLines.Always">
+            <summary>
+            To dispaly the TimeIndicatorLines.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeIndicatorLines.OnHover">
+            <summary>
+            To show the TimeIndicatorLines on taskbar hover.
+            </summary>
+        </member>
+        <member name="F:RadiantQ.Web.JQGantt.Common.TimeIndicatorLines.OnResize">
+            <summary>
+            To show the TimeIndicatorLines on taskbar resize.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.Columns">
+            <summary>
+            To specify the table columns
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.Column">
+            <summary>
+            To define the column properties
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.Common.Column.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.field">
+             <summary>
+              To bind the value to column
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.title">
+             <summary>
+              To specify the title to the column 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.iseditable">
+             <summary>
+              To enable/disable the column editing 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.isParentEditable">
+             <summary>
+              To enable/disable the summary editing 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.width">
+             <summary>
+              To assign  the column width
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.template">
+             <summary>
+              To define  the column template
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.editor">
+             <summary>
+              To specify the column editor
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.cellalign">
+             <summary>
+              To specify the cell value alignment
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.format">
+             <summary>
+              To specify the cell value format 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.clientTemplate">
+             <summary>
+              To specify the user defined template
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.clientEditorTemplate">
+             <summary>
+              To specify the user defined template for editing
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.Column.background">
+             <summary>
+              To specify the user defined background for column
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Common.GanttTableOptions">
+            <summary>
+            To specify the gantt table options
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttTableOptions.Columns">
+             <summary>
+              To specify the column
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttTableOptions.editmode">
+             <summary>
+              To specify the edit mode
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttTableOptions.resizable">
+             <summary>
+              To enable the column resizer
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttTableOptions.TableID">
+             <summary>
+              To define the table id
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttTableOptions.startEdit">
+             <summary>
+              To define the method on start editing 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Common.GanttTableOptions.ColumnBehaviour">
+             <summary>
+              To define the column behaviour
+            </summary>
+        </member>
+        <member name="T:RadiantQMVC.RadiantQExtensions">
+            <summary>
+            Provides HTMLHelpers for declaring Project and Flexy Gantt widgets in MVC (.aspx and .cshtml) pages.
+            </summary>
+        </member>
+        <member name="M:RadiantQMVC.RadiantQExtensions.JQFlexyGantt(System.Web.Mvc.HtmlHelper,RadiantQ.Web.JQGantt.Common.JQFlexyGanttSettings)">
+            <summary>
+            Wrapper for the FlexyGantt jQuery widget. This is a light-weight, flexible and feature rich gantt component that display your
+            hierarchical project or resource list in a multi-column tree list on the left
+            and lets you visualize the assigned tasks and summary tasks over a time-scale on
+            the right. This gantt has no built-in scheduling functionality.
+            </summary>
+            <remarks>
+            The FlexyGantt is built to let you bind to any kind of flat or hierarchical
+            lists of project or resource data. Common with &quot;resource views&quot;, you
+            can optionally show multiple tasks in the same row in the gantt chart on the
+            right.
+            <para> </para>
+            <para>Here are the options that needs to be set to configure the
+            FlexyGantt.</para>
+            <para> </para>
+            <list type="number">
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.DataSourceUrl">JSONDataSourceUrl</see>
+            from where JSON data representing the hierarchy of tasks will be retrieved. The
+            <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.HierarchyResolverFunction">HierarchyResolverFunction
+            </see>should then be specified to help resolve any hierarchy that needs to be
+            displayed in the table.</description></item>
+            <item>
+            <description>If your leaf node has a list of tasks (as in a resource view), then
+            set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TasksListProperty">TasksListProperty
+            </see>property to return a list of tasks from the leaf-nodes in the hierarchy
+            defined above. (If the leaf nodes in the hierarchy are themselves tasks, then
+            you do not have to set the TasksListProperty property.)</description></item>
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TaskStartTimeProperty">TaskStartTime</see>
+            to specify how to retrieve the start time of a task from the bound
+            data.</description></item>
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TaskEndTimeProperty">TaskEndTime
+            </see>to specify how to retrieve the duration of a task from the bound
+            data.</description></item>
+            <item>
+            <description>If you want to visualize the summary tasks then similarly set the
+            <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.ParentTaskStartTimeProperty">ParentTaskStartTime
+            </see>and <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.ParentTaskEndTimeProperty">ParentTaskEndTimeProperty
+            </see>properties.</description></item>
+            <item>
+            <description>To visualize your project/resource list in a multi-column
+            tree-list, in the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.FlatItemsSourceCreated">FlatItemsSourceCreated
+            </see>handler include the jQuery code required to embed a FlexyTable widget. The
+            FlexyTable should then be initialized with appropriate column templates to allow
+            expand/collapse of hierarchical content. (If you do not set the
+            CustomSourceListViewTemplate property, the left side of the gantt will be
+            empty.)</description></item>
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.TaskItemTemplate">TaskItemTemplate
+            </see>to define the look and feel of the task bars. </description></item>
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.FlexyGanttOptions.ParentTaskItemTemplate">ParentTaskItemTemplate
+            </see>if you want to visualize the summary tasks as
+            well.</description></item></list>
+            </remarks>
+            <param name="helper"></param>
+            <param name="settings"></param>
+        </member>
+        <member name="M:RadiantQMVC.RadiantQExtensions.JQProjectGantt(System.Web.Mvc.HtmlHelper,RadiantQ.Web.JQGantt.Common.JQProjectGanttSettings)">
+            <summary>
+            Wrapper for the GanttControl jQuery widget. This is a light-weight, flexible and feature rich gantt component that display your
+            hierarchical project or resource list in a multi-column tree list on the left
+            and lets you visualize the assigned tasks and summary tasks over a time-scale on
+            the right.
+            </summary>
+            <param name="helper"></param>
+            <param name="settings"></param>
+        </member>
+        <member name="T:RadiantQ.WebForms.JQGantt.GanttBase">
+            <summary>
+            A common base class for the GanttControl and FlexyGantt controls.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.WebForms.JQGantt.GanttBase.#ctor(System.Web.UI.HtmlTextWriterTag)">
+            <summary>
+            constructor.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.TableId">
+            <summary>
+            Represents the id of the div that will be made a GanttTable widget.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.DataSourceUrl">
+            <summary>
+            An Uri identifying a resource that returns the task hierarchy in Json format.
+            </summary>       
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.AfterDataRetrievedCallback">
+            <summary>
+            AfterDataRetrievedCallback will call when source is retrieved from server.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.AfterGanttWidgetInitializedCallback">
+            <summary>
+            AfterGanttWidgetInitializedCallback will call when the Gantt is initialized.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.DataSourceUrlArguments">
+            <summary>
+            Arguments to be sent to the server.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.LocalizationResourceFilePath">
+            <summary>
+            Culture File Path.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.CurrentCultureName">
+            <summary>
+            Culture Name.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.AjaxSettings">
+             <summary>
+            A collection of Ajax options.
+             </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.GanttTableRowLoadedCallBack">
+             <summary>
+            GanttTableRowLoadedCallBack will call while loading the gantt row.
+             </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.DataConverterCallBack">
+            <summary>
+            Specifies the ajax data convertor callback.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBase.CustomProgressCalculation">
+            <summary>
+            A custom logic that will be used, if available, to calculate the progress value of a summary bar. Set this before setting the ItemsSource property.
+            </summary>      
+        </member>
+        <member name="T:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.#ctor(System.Web.UI.HtmlTextWriterTag)">
+            <summary>
+            Constructor 
+            </summary>         
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.UseChartVirtualization">
+            <summary>
+            Specifies whether or not to use virtualization while rendering the chart. If Virtualization is on, only the visible rows are rendered in the chart allowing you to load
+            a very large number of rows. However, scrolling could be slower than when virtualization is false. Default is false for backward compatibility. Turn this to true, if the gantt takes longer than 2 seconds to load your data, to improve load time.
+            Set this before the gantt loads. For performance reasons, resetting after the load is not supported.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.EnableCustomRowBackground">
+            <summary>
+             Gets or sets a value that will enable the EnableCustomRowBackground.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.EnableCustomRowForeground">
+            <summary>
+             Gets or sets a value that will enable the EnableCustomRowForeground.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.UseVirtualization">
+            <summary>
+            Gets or sets the UseVirtualization.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.RowRenderingScheduleBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to TimeSpan) from
+            the source task item, indicating the required effort for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.OnTaskBarLoad">
+            <summary>
+            OnTaskBarLoad callback
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.TaskBarBrowseToCueLeftTemplate">
+            <summary>
+            The template that will be used to render the left arrow button in the browse-to task cue displayed to the left of a row, when the task is outside and to the left of the view.
+            This cue will automatically display when a template is provided.
+            </summary>        
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.TaskBarBrowseToCueRightTemplate">
+            <summary>
+            The template that will be used to render the right arrow button in the browse-to task cue displayed to the right of a row, when the task is outside and to the right of the view. 
+            This cue will automatically display when a template is provided.
+            </summary>      
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.AutoExpandNodes">
+            <summary>
+            Specifies if realized nodes are automatically expanded. Default is true.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.WorkTimeSchedule">
+            <summary>
+            Gets or sets the WorkTimeSchedule that defines the working time schedule for the
+            project.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.MinTimeUnitWidthForHeaderVisibility">
+            <summary>
+            If the time units in a header are shrunk to less than the specified size (while zooming out for example), the whole header will be hidden.
+            Default is 10px. Value cannot be less than 10.
+            </summary>
+            <remarks>Also, while zooming out, the user cannot shrink the time-units in the top-most header to a width
+            that is smaller than this value.</remarks>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.ZoomOptions">
+            <summary>
+            Allows you to customize the Zooming options available for your end-users during runtime. Default is 
+            MouseWheelZoomOnTimeScaleHeaders | MouseWheelZoomOnGanttChart | LeftMouseButtonDownDrag.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.ScrollOptions">
+            <summary>
+            Allows you to configure the end-user scrolling options.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.TablePanelWidth">
+            <summary>
+            To set the width of table area.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.RowHeight">
+            <summary>
+            Gets or sets the row height for each activity in the grid and chart.
+            </summary>
+            <value>
+            Default is 20.0.
+            </value>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.BaseTimeUnitWidth">
+            <summary>
+            Specifies the width that will be allocated to the base time unit in the gantt.
+            chart.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.BaseTimeUnitWidthMaximum">
+            <summary>
+            This specifies how much the end-user can zoom-out using the mouse wheel or the zoom-slider.
+            Default value is 100. Provide a lower value based on what and how many time scales you choose to display in 
+            the headers.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.BaseTimeUnitWidthMinimum">
+            <summary>
+            This specifies how much the end-user can zoom-in using the mouse wheel or the zoom-slider.
+            Default value is 10. Provide a higher or lower value based on what and how many time scales you choose to display in 
+            the headers.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.CustomChartBackgroundRanges">
+            <summary>
+             Points to a JavaScript instance that is a set of custom ranges that will be rendered in the chart's background with each range's content defined in the CustomRangeInfo.DataTemplate.
+             </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.DependencyLineColor">
+            <summary>
+            Gets or sets the DependencyLineColor.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.SelectionMode">
+            <summary>
+            Selection Mode
+            </summary>
+            <value>
+            Default is Multiple.
+            </value>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.RoundTimeEditsTo">
+            <summary>
+            Gets or sets a property that specifies how end-user specifid time values should
+            be rounded to.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.SpecialLineInfos">
+            <summary>
+            Returns a list of <see cref="T:RadiantQ.Web.JQGantt.Common.SpecialLineInfo">SpecialLineInfo</see>
+            instances. The default list includes a special line for &quot;Today&quot;.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.TimeScaleHeaders">
+            <summary>
+            Gets or sets a list of <see
+            cref="T:RadiantQ.Web.JQGantt.Common.TimeScaleHeaderDefinition">TimeScaleHeaderDefinition</see>
+            definitions.
+            </summary>
+            <remarks>
+            This list specifies the headers that are to be used in the chart view. The <see
+            cref="P:RadiantQ.Web.JQGantt.Common.GanttBaseOptions.BaseTimeUnitWidth">BaseTimeScaleUnitWidth</see>
+            defines the horizontal space taken by each header. 
+            <para></para>
+            <para>Ensure that the different time scale headers are added in appropriate
+            order. For example, &quot;days&quot; should be added after &quot;weeks&quot; and
+            not the other way.</para>
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.Zoomed">
+            <summary>
+            References a java script function that's called when the chart is zoomed.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.BeforeZooming">
+            <summary>
+            References a java script function that's called before setting the updated BaseTimeUnitWidth in Chart.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.TaskTooltipTemplateID">
+            <summary>
+            The id of the Task Tooltip Template
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.TimeRangeHighlightBehavior">
+            <summary>
+            Specifies the any time range highlight behavior that should be turned on. Default is None.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.KnockoutObjectName">
+            <summary>
+            String variable name which represent the Knockout view model
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.GanttChartOptions">
+            <summary>
+            Specifies the GanttChart Options.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.ChartTemplateApplied">
+            <summary>
+            References a java script function that's called when Chart is created.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.ResizeInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while resizing. If you set this property make
+            sure that the assigned Popup does not have a Parent yet. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.MovingInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while moving the task. If you set this property make sure that the assigned Popup does not have a Parent yet.
+            The DataContext for this popup will be an instance of the ShiftAndConnectionTracker type in a GanttControl and ShiftTracker in a FlexyGantt.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.ConnectingInfoPopupID">
+            <summary>
+            The id of the Popup instance that is shown while connecting two task. If you set this property make
+            sure that the assigned Popup does not have a Parent yet. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.GanttTableTemplateApplied">
+            <summary>
+            References a java script function that's called when Table is created.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.IsReadOnly">
+            <summary>
+            Gets or sets a value that specifies whether the control is editable by the end-user. Default is false.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.IsEffortReadOnly">
+            <summary>
+            Gets or sets a value that specifies whether the required efforts are editable by the end-user. Default is false.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.IsStartTimesReadOnly">
+            <summary>
+            Gets or sets a value that specifies whether the start times are editable by the end-user. Default is false.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.IsProgressPercentReadOnly">
+            <summary>
+            Gets or sets a value that specifies whether the progress percents are editable by the end-user. Default is false.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.IsDependencyLinesReadOnly">
+            <summary>
+             Gets or sets a value that specifies whether the DependencyLines are editable by the end-user. Default is false.
+            </summary> 
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttBaseWithOptions.EnableAlternativeRowBackground">
+            <summary>
+             Gets or sets a value that will enable the AlternativeRowBackground.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.WebForms.JQGantt.GanttControl">
+            <summary>
+            WebControl for the jQuery GanttControl widget. A light-weight, flexible and intuitive gantt component that display your
+            hierarchical project or resource list in a multi-column tree list on the left
+            and lets you visualize the assigned tasks and summary tasks over a time-scale on
+            the right.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.WebForms.JQGantt.GanttControl.#ctor">
+            <summary>
+            constructor.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.WebForms.JQGantt.GanttControl.OnInit(System.EventArgs)">
+            <summary>
+            override
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RadiantQ.WebForms.JQGantt.GanttControl.OnPreRender(System.EventArgs)">
+            <summary>
+            override
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ProjectStartDate">
+            <summary>
+            Specifies the project start date. This date will be used when StartTime is not available for a task. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ProjectEndDate">
+            <summary>
+            Specifies the project start date. This date will be used when StartTime is not available for a task. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.LagStringUnitsInHours">
+            <summary>
+            Gets or sets a value that defines how many hours one unit of the lag string in predecessors string represents. Set this before setting the ItemsSource property. Default is 1. 
+            </summary>       
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.FlatActivitiesListCreated">
+            <summary>
+            The java script function that's called when the flat list of activities are created.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ValidateDependencySetting">
+            <summary>
+            Gets or sets a value that indicates whether newly added dependencies should be validated for appropriateness.
+            For example, a task cannot have a dependency on it's parent/summary task. Default is true. Set this to false 
+            while binding a data source with the gantt when the dependencies in the bound data source are known to be valid.
+            This will greatly improve load time. See Reference for code example.
+            </summary>
+            <remarks>
+            <code lang="Java Script">Sample code:
+            <para>// Turn off dependency validation and start time constraining,</para>
+            while loading.
+            <para></para>Html.JQProjectGantt(new JQProjectGanttSettings(){ ..,ValidateDependencySetting =false});
+            <para></para>Html.JQProjectGantt(new JQProjectGanttSettings(){ ..,EnforceDependencyConstraints =false});
+            <para></para>// Turn them back on to validate and enforce times during end-user
+            interaction. You can listen to the RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.AfterGanttWidgetInitializedCallback in your jquery code and turn this back on like this.
+            <para></para> $(element).GanttControl({ EnforceDependencyConstraints: true, ValidateDependencySetting: true });    
+            </code>
+            </remarks>
+            <seealso
+            cref="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.EnforceDependencyConstraints">EnforceDependencyConstraints</seealso>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.EnforceDependencyConstraints">
+            <summary>
+            Gets or sets a value that indicates whether newly added dependencies should be validated for appropriateness.
+            For example, a task cannot have a dependency on it's parent/summary task. Default is true. Set this to false 
+            while binding a data source with the gantt when the dependencies in the bound data source are known to be valid.
+            This will greatly improve load time. See Reference for code example.
+            </summary>
+            <remarks>
+            <code lang="Java Script">Sample code:
+             <para>// Turn off dependency validation and start time constraining,</para>
+            while loading.
+            <para></para>Html.JQProjectGantt(new JQProjectGanttSettings(){ ..,ValidateDependencySetting =false});
+            <para></para>Html.JQProjectGantt(new JQProjectGanttSettings(){ ..,EnforceDependencyConstraints =false});
+            <para></para>// Turn them back on to validate and enforce times during end-user
+            interaction. You can listen to the RadiantQ.Web.JQGantt.Common.JQBaseGanttSettings.AfterGanttWidgetInitializedCallback in your jquery code and turn this back on like this.
+            <para></para> $(element).GanttControl({ EnforceDependencyConstraints: true, ValidateDependencySetting: true });    
+            </code>
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.AutoCalculateSummaryTaskTimes">
+            <summary>
+            Specifies whether the parent/summary task times will be calculated automatically based on the
+            child tasks.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.AdjustDurationOnAssignment">
+            <summary>
+            Reduces or increases the duration of the task when resources are assigned to or excluded from it. 
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.IDBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to int) from
+            the source task item, indicating the id for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>    
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.SortOrderBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to
+            int) from the source task item, indicating the sort order for the activity.
+            Setting this is optional for data bound instances of the gantt control.
+            </summary>
+            <remarks>
+            When an activity is repositioned by the end user (or programatically) the order
+            of the activity in the bound data source needs to be updated. This is possible
+            only by including a field that indicates it's sort order.
+            <para></para>
+            <para>If this is not set, any reordering information will not be persisted</para>
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.NameBinding">
+            <summary>
+            Gets or sets the binding information that will return a string value from
+            the source task item, indicating the name for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.IndentLevelBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to int) from
+            the source task item, indicating the indent level for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.StartTimeBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to DateTime) from
+            the source task item, indicating the start time for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary> 
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.PreferredStartTimeBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to DateTime) from
+            the source task item, indicating the preferred start time for the activity. Setting this is
+            optional for data bound instances of the gantt control.
+            </summary>
+            <remarks>
+            The StartTime of an activity refers to the current start time which could have been computed based on the
+            dependencies and parent-child hierarchies that are in the gantt. But, this property refers to the preferred
+            start time for this activity. So, the gantt will try to anchor the activity to this time whenever possible.
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.EffortBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to TimeSpan) from
+            the source task item, indicating the required effort for the activity. Setting this is
+            mandatory for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.EndTimeBinding">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.PredecessorIndicesBinding">
+            <summary>
+            Gets or sets the binding information that will return a string value from
+            the source task item, indicating the predecessors for the activity. Setting this is
+            optional for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ProgressPercentBinding">
+            <summary>
+            Gets or sets the binding information that will return a value (convertible to double) from
+            the source task item, indicating the progress info for the activity. Setting this is
+            optional for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.DescriptionBinding">
+            <summary>
+            Gets or sets the binding information that will return a string value from
+            the source task item, indicating the description for the activity (this value is currently not used
+            in the implementation). Setting this is
+            optional for data bound instances of the gantt control.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ResourceItemsSource">
+            <summary>
+            The data source list containing a list of objects representing the resources
+            that can be assigned to each activity. Set this before setting the DataSource property. It's typical to set the <see
+            cref="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.AssignedResourcesBinding">AssignedResourcesBinding</see> property as well, when you set this. The <see
+            cref="P:RadiantQ.Web.JQGantt.Common.ProjectGanttOptions.ResourceNameBinding">ResourceNameBinding</see>
+            property defines how the name of each resource can be retrieved from this data source (if this is a list of objects, instead of a list of strings).
+            </summary>
+            <remarks>
+            Note that you can also add a list of strings for this property, in which case
+            the ResourceNameBinding property need not be set.
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ResourceNameBinding">
+            <summary>
+            Gets or sets the binding information that will return a string from the
+            source resource item (specified in the ResourceItemsSource list) indicating the name for the resource. 
+            Setting this is optional. If you do not set this, the bound resource item's (if any) "toString" will be used as the resource name in the gantt.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ResourceIDBinding">
+            <summary>
+            Gets or sets the binding information that will return a string from the
+            source resource item (specified in the ResourceItemsSource list) indicating the ID for the resource. 
+            This will be used to resolve the comma-separated resource assignments string in a task.
+            Setting this is optional. If you do not set this, the ResourceNameBinding will be used to resolve the assignments string instead.
+            If you do set this in XAML or before
+            initializing the ResourceItemsSource with a source collection.
+            </summary>    
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ResourceScheduleBinding">
+            <summary>
+            Gets or sets the binding information that will return a WorkTimeSchedule
+            instance from the source resource item (specified in the ResourceItemsSource
+            list) that defines the resource's schedule. Setting this is optional. If not
+            set, the resource will inherit the same schedule as the overall project.
+            Typically, you could bind this to a string property in your resource type and
+            convert it into a WorkTimeSchedule as illustrated in the summary.
+            </summary>
+            <remarks>
+            The custom schedule can be represented as a string like this: 
+            <para></para>
+            <code lang="C#">new ResourceInfo() { ResourceID = 2, ResourceName =
+            &quot;Resource 2&quot;, CustomScheduleString = &quot;MON 8:00:00 16:00:00; TUE
+            8:00:00 16:00:00; WED 8:00:00 16:00:00; THU 8:00:00 16:00:00;&quot; } 
+            </code>
+            <para>In which case this property would be set as: </para>
+            <para></para>
+            <code>ResourceNameBinding=&quot;{Binding ResourceName}&quot; ResourceScheduleBinding=&quot;{Binding CustomScheduleString, Converter={StaticResource stringToWorkTimeScheduleConverter}}&quot; 
+            </code> 
+            </remarks>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.AssignedResourcesBinding">
+            <summary>
+            Gets or sets the binding information that will return a string of resource names from the
+            source task item, indicating the resources assigned to the corresponding
+            activity. Setting this is optional.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.IsTaskReadOnlyBinding">
+            <summary>
+            Gets or sets the binding information that will return a bool value indicating
+            whether a task's times are editable in the table and chart.
+            </summary>          
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.CanShiftInProgressTasks">
+            <summary>
+            Specifies whether dependency constraints can shift a dependent task once it's work has progressed or completed. Default is true.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ScheduleFrom">
+            <summary>
+            Specifies the project start date. This date will be used when StartTime is not available for a task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.TaskItemTemplate">
+            <summary>
+            Specifies the look and feel of a task rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's start and end time.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ProgressBarTemplate">
+            <summary>
+            Specifies the look and feel of a Progress Bar The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's Progress.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ParentTaskItemTemplate">
+            <summary>
+            Specifies the look and feel of a  Parent task rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's start and end time.
+            </summary>
+            
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.DependencyLineColor">
+            <summary>
+            Gets or sets the DependencyLineColor.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.CanInsertPropertyChangeTriggeringPropertiesInData">
+            <summary>
+            Specifies whether can insert PropertyChange listener properties in data.
+            </summary>
+            <value>
+            Default is false.
+            </value>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.TaskBarBackgroundTemplate">
+            <summary>
+            Specifies the look and feel of a baseline bar rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the baseline's start and end time.
+            </summary>      
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.TaskBarAdornerTemplate">
+            <summary>
+            Specifies the look and feel of a baseline bar rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the baseline's start and end time.
+            </summary>      
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.FilterActivites">
+            <summary>
+            The method that will specify whether or not an activity should be filtered out of view. Return true to keep the activity visible; false to hide it.
+            </summary>       
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.WBSIDBinding">
+            <summary>
+            Set the binding information that will return a value (convertible to
+            string) from the source task item, indicating the WBS for the activity and into which the auto-generated WBS will be persisted.
+            Setting this is optional.  If you
+            do, set this in XAML or before initializing the ItemsSource with a source collection.
+            The GanttControl.ProvideWBSID handler will have to be set for the auto WBS generation to kick in.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.GanttControl.ProvideWBSID">
+            <summary>
+            A method through which you can provide a wbs id for a task based on it's position in the hierarchy. Setting this will turn
+            on auto WBS ID generation for tasks.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.WebForms.JQGantt.FlexyGantt">
+            <summary>
+            Wrapper for the jQuery FlexyGantt widget. This is a light-weight, flexible and intuitive gantt component that display your
+            hierarchical project or resource list in a multi-column tree list on the left
+            and lets you visualize the assigned tasks and summary tasks over a time-scale on
+            the right. This gantt has no built-in scheduling functionality.
+            </summary>
+            <remarks>
+            The FlexyGantt is built to let you bind to any kind of flat or hierarchical
+            lists of project or resource data. Common with &quot;resource views&quot;, you
+            can optionally show multiple tasks in the same row in the gantt chart on the
+            right.
+            <para> </para>
+            <para>Here are the options that needs to be set to configure the
+            FlexyGantt.</para>
+            <para> </para>
+            <list type="number">
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.WebForms.JQGantt.GanttBase.DataSourceUrl">JSONDataSourceUrl</see>
+            from where JSON data representing the hierarchy of tasks will be retrieved. The
+            <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.HierarchyResolverFunction">HierarchyResolverFunction
+            </see>should then be specified to help resolve any hierarchy that needs to be
+            displayed in the table.</description></item>
+            <item>
+            <description>If your leaf node has a list of tasks (as in a resource view), then
+            set the <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TasksListProperty">TasksListProperty
+            </see>property to return a list of tasks from the leaf-nodes in the hierarchy
+            defined above. (If the leaf nodes in the hierarchy are themselves tasks, then
+            you do not have to set the TasksListProperty property.)</description></item>
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TaskStartTimeProperty">TaskStartTime</see>
+            to specify how to retrieve the start time of a task from the bound
+            data.</description></item>
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TaskEndTimeProperty">TaskEndTime
+            </see>to specify how to retrieve the duration of a task from the bound
+            data.</description></item>
+            <item>
+            <description>If you want to visualize the summary tasks then similarly set the
+            <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.ParentTaskStartTimeProperty">ParentTaskStartTime
+            </see>and <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.ParentTaskEndTimeProperty">ParentTaskEndTimeProperty
+            </see>properties.</description></item>
+            <item>
+            <description>To visualize your project/resource list in a multi-column
+            tree-list, in the <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.FlatItemsSourceCreated">FlatItemsSourceCreated
+            </see>handler include the jQuery code required to embed a FlexyTable widget. The
+            FlexyTable should then be initialized with appropriate column templates to allow
+            expand/collapse of hierarchical content. (If you do not set the
+            CustomSourceListViewTemplate property, the left side of the gantt will be
+            empty.)</description></item>
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TaskItemTemplate">TaskItemTemplate
+            </see>to define the look and feel of the task bars. </description></item>
+            <item>
+            <description>Set the <see
+            cref="P:RadiantQ.WebForms.JQGantt.FlexyGantt.ParentTaskItemTemplate">ParentTaskItemTemplate
+            </see>if you want to visualize the summary tasks as
+            well.</description></item></list>
+            </remarks>   
+        </member>
+        <member name="M:RadiantQ.WebForms.JQGantt.FlexyGantt.#ctor">
+            <summary>
+            Constructor 
+            </summary>       
+        </member>
+        <member name="M:RadiantQ.WebForms.JQGantt.FlexyGantt.OnInit(System.EventArgs)">
+            <summary>
+            override
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RadiantQ.WebForms.JQGantt.FlexyGantt.OnPreRender(System.EventArgs)">
+            <summary>
+            override
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TaskStartTimeProperty">
+            <summary>
+            Specifies the property that returns a start time (DateTime) from the bound object representing a task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.FlatItemsSourceCreated">
+            <summary>
+            A java script fuction that's called when the flat list representing each row in the table is created.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.ParentTaskStartTimeProperty">
+            <summary>
+            Specifies the binding that returns a end time (DateTime) from the bound object representing a summary task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TaskItemTemplate">
+            <summary>
+            Specifies the look and feel of a task rendered within each row. The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's start and end time.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.ParentTaskItemTemplate">
+            <summary>
+            Specifies the look and feel of a summary-task rendered in the gantt chart. The root element in the template will be streched
+            horizontally and vertically to the right size based on the task's start and end time. This template should
+            be capable of rendering the different bound object types representing each summary row at different levels in the tree.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TaskEndTimeProperty">
+            <summary>
+            Specifies the binding that returns a end time (DateTime) from the bound object representing a task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.ParentTaskEndTimeProperty">
+            <summary>
+            Specifies the binding that returns a end time (DateTime) from the bound object representing a summary task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.OverlappedTasksRenderingOptimization">
+            <summary>
+            Specifies if the Task Bars can overlap or shrink to adjust the heights within the gantt chart rows.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TasksListProperty">
+            <summary>
+            If the leaf nodes in the tree contain a list of tasks that are meant to be displayed in the same row in the
+            gantt chart, define this binding to return the list of tasks from the bound object (which will be the 
+            DataContext for this binding) representing the leaf-node.
+            If your leaf node is itself a task, this should be null.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.ParentTasksListProperty">
+            <summary>
+            If the parent nodes in the tree contain a list of tasks that are meant to be displayed in the same row in the
+            gantt chart, define this binding to return the list of tasks from the bound object (which will be the 
+            DataContext for this binding) representing the parent-node.
+            If your parent node itself represents a single task with properties representing the start and end times, then
+            leave this at null and set the ParentTaskStartTimeBinding and ParentTaskEndTimeBinding properties.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.RowHeightBinding">
+            <summary>
+            Use this to specify a varyting row height for each row in the FlexyGantt's FlexyTable. The source for this binding will be a FlexyNodeData instance which has a Data property which is a reference
+            to the bound object corresponding to that row.
+            </summary>    
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.ProgressPercentBinding">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.HierarchyResolverFunction">
+            <summary>
+            If there is a hierarchy that needs to be displayed in the grid on the left, then provide a "resolver function" here that will help retrieve a child list from a parent item.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.DynamicResolverFunction">
+            <summary>
+            dynamicResolverFunction is same as hierarchy resolver function but it will call when the the flexyNodeData's ExpandState changed dynamically, and the value returned by resolverFunction will be ignored.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.UseTimeRangeFilteredTasksInRows">
+            <summary>
+              Normally all the tasks within a row are rendered in the UI even if they are out the current view. But, this would bog things down if there are thounds of tasks to show in the view. Set this to true if you want them
+             to be filtered every time the chart's view span changes. Use this in conjunction with UseTimeRangeFilteredTasksInRows, TimeRangeFilteredTasksTimeBuffer and FilterTasksByTimeRange event.
+            </summary>      
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.TimeRangeFilteredTasksTimeBuffer">
+            <summary> 
+            The buffer to apply before and after the chart's view span when filtering tasks to show within that span, when UseTimeRangeFilteredTasksInRows is set to true
+            </summary>   
+        </member>
+        <member name="P:RadiantQ.WebForms.JQGantt.FlexyGantt.FilterTasksByTimeRange">
+            <summary>
+            Listener used to determine which set of tasks fall under the current chart view span.
+            </summary>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.LocalizedStrings">
+            <summary>
+            Use the static methods in this type to access/alter localized strings.
+            </summary>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.LocalizedStrings.GetLocalizedString(System.String)">
+            <summary>
+            Get the localized string value specifying the &quot;string name&quot;. This will
+            also return any overriden string specified via the OverrideLocalizedString
+            method.
+            </summary>
+            <param name="name">The name of a string resource declared in the resx of this RadiantQ.GanttControls.dll.
+            The best way to find the list of string resource names is to open the dll in a tool like Reflector.</param>
+            <returns>
+            The localized string value based on the specified string name.
+            </returns>
+        </member>
+        <member name="M:RadiantQ.Web.JQGantt.LocalizedStrings.OverrideLocalizedString(System.String,System.String)">
+            <summary>
+            Sometimes you might not like the default strings that are being used. In such cases, call this method to override the default values with custom ones.
+            </summary>
+            <param name="name">The name of a string resource declared in the resx of this RadiantQ.GanttControls.dll.
+            The best way to find the list of string resource names is to open the dll in a tool like Reflector.</param>
+            <param name="value">The value to override. Specifying a "null" will clear the override for the specified string-name.</param>
+        </member>
+        <member name="T:RadiantQ.Web.JQGantt.Resources.StringLibrary">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ConvertToMilestoneString">
+            <summary>
+              Looks up a localized string similar to Convert to Milestone.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ConvertToNormalTaskString">
+            <summary>
+              Looks up a localized string similar to Convert to normal Task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DaysString">
+            <summary>
+              Looks up a localized string similar to Days.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DeleteTaskString">
+            <summary>
+              Looks up a localized string similar to Delete Task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DlgAutoHdngTimeSclHdrs">
+            <summary>
+              Looks up a localized string similar to Auto Hiding Time Scale Headers.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DlgBtmHdrsMaxWd">
+            <summary>
+              Looks up a localized string similar to Bottom Header&apos;s Max Width:.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DlgDflBtmHdrWd">
+            <summary>
+              Looks up a localized string similar to Default bottom Header Width:.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DlgMaxHdrsCnt">
+            <summary>
+              Looks up a localized string similar to Maximum Headers Count:.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DlgSltHdrs">
+            <summary>
+              Looks up a localized string similar to Select Headers.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DlgSzToFit">
+            <summary>
+              Looks up a localized string similar to Size view to Fit.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DlgTimeScaleHdrSettings">
+            <summary>
+              Looks up a localized string similar to Gantt Chart Time Scale Header Settings.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DlgTopHdrsMinWd">
+            <summary>
+              Looks up a localized string similar to Top Header&apos;s Min Width:.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.DurationString">
+            <summary>
+              Looks up a localized string similar to Duration.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.EffortString">
+            <summary>
+              Looks up a localized string similar to Effort.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.EndTimeString">
+            <summary>
+              Looks up a localized string similar to EndTime.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.FinishString">
+            <summary>
+              Looks up a localized string similar to Finish.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.FinishToStartLinkString">
+            <summary>
+              Looks up a localized string similar to Finish-to-Start Link.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.FromFinishOfString">
+            <summary>
+              Looks up a localized string similar to From finish of.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.FromString">
+            <summary>
+              Looks up a localized string similar to From.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.HalfYearlyString">
+            <summary>
+              Looks up a localized string similar to Semi-Annual.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.HoursString">
+            <summary>
+              Looks up a localized string similar to Hours.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.IDString">
+            <summary>
+              Looks up a localized string similar to ID.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.IndentString">
+            <summary>
+              Looks up a localized string similar to Indent.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.LagString">
+            <summary>
+              Looks up a localized string similar to Lag.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.MilestoneString">
+            <summary>
+              Looks up a localized string similar to Milestone.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.MinutesString">
+            <summary>
+              Looks up a localized string similar to Minutes.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.MonthsString">
+            <summary>
+              Looks up a localized string similar to Months.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.NameString">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.NewTaskString">
+            <summary>
+              Looks up a localized string similar to New Task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.OutdentString">
+            <summary>
+              Looks up a localized string similar to Outdent.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.PleaseProvideCorrectFormatString">
+            <summary>
+              Looks up a localized string similar to Please provide a correct format.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.PredecessorsString">
+            <summary>
+              Looks up a localized string similar to Predecessors.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ProgressPercentString">
+            <summary>
+              Looks up a localized string similar to Progress Percent.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ProgressString">
+            <summary>
+              Looks up a localized string similar to Progress.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.QuartersString">
+            <summary>
+              Looks up a localized string similar to Quarters.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ResourcesString">
+            <summary>
+              Looks up a localized string similar to Resources.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ScrollsToNextHiddenTask">
+            <summary>
+              Looks up a localized string similar to Scroll to bring next hidden task to view.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ScrollsToPrevHiddenTask">
+            <summary>
+              Looks up a localized string similar to Scroll to bring previous hidden task to view.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ScrollToTask">
+            <summary>
+              Looks up a localized string similar to Scroll to bring task to view.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ShortDayString">
+            <summary>
+              Looks up a localized string similar to d.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ShortHalfString">
+            <summary>
+              Looks up a localized string similar to H.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ShortHourString">
+            <summary>
+              Looks up a localized string similar to h.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ShortMinuteString">
+            <summary>
+              Looks up a localized string similar to m.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ShortMonthDayFormatString">
+            <summary>
+              Looks up a localized string similar to MM/dd.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ShortQuarterString">
+            <summary>
+              Looks up a localized string similar to Q.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ShortSecondsString">
+            <summary>
+              Looks up a localized string similar to s.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.StartString">
+            <summary>
+              Looks up a localized string similar to Start.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.StartTimeString">
+            <summary>
+              Looks up a localized string similar to StartTime.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.SummaryString">
+            <summary>
+              Looks up a localized string similar to Summary.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.TaskInformationString">
+            <summary>
+              Looks up a localized string similar to Task Information....
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.TaskLinkString">
+            <summary>
+              Looks up a localized string similar to Task Link.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.TaskString">
+            <summary>
+              Looks up a localized string similar to Task.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.TimeScaleLeftButtonTooltipString">
+            <summary>
+              Looks up a localized string similar to Page Left.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.TimeScaleRightButtonTooltipString">
+            <summary>
+              Looks up a localized string similar to Page Right.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.TodayString">
+            <summary>
+              Looks up a localized string similar to Today.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ToStartOfString">
+            <summary>
+              Looks up a localized string similar to To start of.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ToXString">
+            <summary>
+              Looks up a localized string similar to To.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.WeeksString">
+            <summary>
+              Looks up a localized string similar to Weeks.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.YearsString">
+            <summary>
+              Looks up a localized string similar to Years.
+            </summary>
+        </member>
+        <member name="P:RadiantQ.Web.JQGantt.Resources.StringLibrary.ZoomSliderToolTipFormatString">
+            <summary>
+              Looks up a localized string similar to Zoom level: {0} of {1} to {2}.
+            </summary>
+        </member>
+    </members>
+</doc>
